@@ -16,7 +16,7 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 
 @Controller
 @RequestMapping("/async/callable")
-public class Async {
+public class AsyncCallable {
 
 	@RequestMapping("/response-body")
 	public @ResponseBody Callable<String> callable() {
@@ -30,6 +30,12 @@ public class Async {
 		};
 	}
 
+//	@RequestMapping("/response-body")
+//	public @ResponseBody String callable() throws Exception{
+//		Thread.sleep(2000);
+//		return "Callable result";
+//	}
+	
 	@RequestMapping("/view")
 	public Callable<String> callableWithView(final Model model) {
 
